@@ -1,0 +1,17 @@
+plugins {
+  id 'java'
+  id 'application'
+}
+
+dependencies {
+  implementation project(':core')
+  implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:1.12.0"
+  implementation "com.badlogicgames.gdx:gdx-platform:1.12.0:natives-desktop"
+}
+
+application {
+  mainClass = "com.heon.light.desktop.DesktopLauncher"
+}
+
+// 여기가 핵심!
+sourceSets.main.resources.srcDirs += ["../assets"]
